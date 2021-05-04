@@ -2,10 +2,10 @@ from selenium import webdriver
 import time
 import unittest
 import re
-from SampleProject.Pages.authenticationPage import AuthenticationPage
-from SampleProject.Pages.homePage import HomePage 
-from SampleProject.Pages.accountPage import AccountPage
-from SampleProject.Pages.dressesPage import DressesPage
+from AutomationPracticeTests.Pages.authenticationPage import AuthenticationPage
+from AutomationPracticeTests.Pages.homePage import HomePage 
+from AutomationPracticeTests.Pages.accountPage import AccountPage
+from AutomationPracticeTests.Pages.dressesPage import DressesPage
 import xlrd
 import json
 from time import sleep
@@ -27,7 +27,7 @@ class AutomationPracticeTests(unittest.TestCase):
         home = HomePage(driver)
         home.click_sign_in()
 
-        workbook = xlrd.open_workbook("SampleProject/Data/data.xls")
+        workbook = xlrd.open_workbook("AutomationPracticeTests/Data/data.xls")
         sheet = workbook.sheet_by_name("Sheet1")
 
         authentication = AuthenticationPage(driver) 

@@ -5,7 +5,7 @@
 
 # How to run the tests:
 ```pwsh
-python -m unittest SampleProject\Tests\test.py
+python -m unittest AutomationPracticeTests\Tests\test.py
 ```
 
 # Notes
