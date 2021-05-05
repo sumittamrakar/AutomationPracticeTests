@@ -23,11 +23,11 @@ class HomePage():
         self.shopping_cart_block_selector = "a[title='View my shopping cart']"
         self.remove_icon_selector = "a.ajax_cart_block_remove_link"
         self.shopping_cart_empty_label_selector = ".ajax_cart_no_product"
+        self.dresses_tab_xpath= "//div[@id='block_top_menu']/ul/li/a[@title='Dresses']"
 
     def is_shopping_cart_empty(self):
         is_empty = wait(self.driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.shopping_cart_empty_label_selector))).is_displayed()
         return is_empty
-
 
     def remove_item_from_cart(self):
         cart_summary = self.driver.find_element_by_css_selector(self.shopping_cart_block_selector)
@@ -35,6 +35,9 @@ class HomePage():
         hover.perform()
 
         wait(self.driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.remove_icon_selector))).click()
+
+    def click_dresses_tab(self):
+        self.driver.find_element_by_xpath(self.dresses_tab_xpath).click()
 
     def click_more(self):
         self.driver.find_element_by_css_selector(self.more_view_selector).click()
@@ -64,7 +67,7 @@ class HomePage():
         self.driver.find_element_by_name(self.search_button_name).click()
 
     def click_sign_in(self):
-           self.driver.find_element_by_css_selector(self.sign_in_button_selector).click()
+        self.driver.find_element_by_css_selector(self.sign_in_button_selector).click()
 
     def validate_search_results(self, search_text ):
         listSearchText = self.driver.find_elements_by_xpath(self.searched_titles)
