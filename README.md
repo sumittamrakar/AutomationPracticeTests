@@ -1,9 +1,11 @@
+This project contains UI python tests with selenium http://automationpractice.com/
+
 # Pre-requisites:
 * Python 3
 * Selenium `pip install -U selenium`
 * Web driver (chromedriver.exe): Included in `Resources` folder
 
-# Run Tests:
+# Run Tests
 
 ### Run all tests
 Using any terminal, from the root of the project execute the following command to run all the tests:
@@ -11,8 +13,8 @@ Using any terminal, from the root of the project execute the following command t
 python -m unittest discover Tests -v
 ```
 ### Run individual test file
-Using any terminal, from the root of the project execute the following command to run a specific test file:
-Note: Update <test_class_name.py> with an actual test class name you want to run.
+Using any terminal, from the root of the project execute the following command to run a specific test file: <br />
+**Note**: *Update <test_class_name.py> with an actual test class name you want to run.*
 ```pwsh
 python -m unittest discover Tests -p <test_class_name.py> -v
 ```
